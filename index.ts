@@ -27,6 +27,9 @@ while(true){
                     case 5:
             imprimirDados(carro);
             break;
+            case 2:
+            frear(carro);
+            break;
         default:
             break;
 
@@ -56,4 +59,10 @@ function imprimirDados(veiculo: Veiculo): void {
     console.log(`Marcha atual: ${veiculo.marchaAtual} de ${veiculo.numeroMarchas}`);
     console.log(`Velocidade: ${veiculo.velocidade} km/h`);
 }
-
+function frear(veiculo: Veiculo): void {
+    veiculo.velocidade -= veiculo.potencia * 0.1;
+    if (veiculo.velocidade < 0) {
+        veiculo.velocidade = 0;
+    }
+    console.log(`Velocidade: ${veiculo.velocidade} km/h`);
+}
