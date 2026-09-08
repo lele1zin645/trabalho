@@ -24,8 +24,12 @@ while(true){
             acelerar(carro);
             break;
     
+                    case 5:
+            imprimirDados(carro);
+            break;
         default:
             break;
+
     }
 }
 
@@ -45,5 +49,11 @@ function criaVeiculo(): Veiculo{
     veiculo.numeroMarchas = +teclado('Número de marchas: ');
     return veiculo;
 }
-
+function imprimirDados(veiculo: Veiculo): void {
+    console.log(`Marca: ${veiculo.marca}`);
+    console.log(`Modelo: ${veiculo.modelo}`);
+    console.log(`Potência: ${veiculo.potencia}`);
+    console.log(`Marcha atual: ${veiculo.marchaAtual} de ${veiculo.numeroMarchas}`);
+    console.log(`Velocidade: ${veiculo.velocidade} km/h`);
+}
 
